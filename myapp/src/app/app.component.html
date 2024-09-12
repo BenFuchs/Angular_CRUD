@@ -1,0 +1,14 @@
+model: <input #model />
+year: <input #year />
+color <input #color />
+<button (click)="addCar(model.value,+year.value,color.value)">ADD CAR</button>
+<hr/>
+Car list:
+<div>
+  <div *ngFor="let car of carList">
+    <p>Model: {{ car.model }}, Year: {{ car.year }}, Color: {{ car.color }}
+      <button (click)="delCar(''+car.id)">DEL</button> - 
+      <button (click)="updCar(''+car.id, model.value,+year.value,color.value)">UPD</button>
+    </p>
+  </div>
+</div>
